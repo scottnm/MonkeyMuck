@@ -3,9 +3,15 @@ using System.Collections;
 
 public class OpenDoorLerp : MonoBehaviour
 {
+    bool doorOpened = false;
+
     public void OpenDoor()
     {
-        StartCoroutine(LerpDoorOpen());
+        if (!doorOpened)
+        {
+            doorOpened = true;
+            StartCoroutine(LerpDoorOpen());
+        }
     }
 
     IEnumerator LerpDoorOpen()
