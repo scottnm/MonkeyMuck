@@ -51,6 +51,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
+
             if (m_Cam != null)
             {
                 // calculate camera relative direction to move:
