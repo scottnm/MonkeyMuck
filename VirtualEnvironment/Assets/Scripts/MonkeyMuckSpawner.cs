@@ -5,6 +5,8 @@ using System.Collections;
 public class MonkeyMuckSpawner : MonoBehaviour
 {
     [SerializeField] float SpawnDelay;
+    [SerializeField] LayerMask haltSpawnerOnIntersection;
+    [SerializeField] float playerDetectionRadius;
     HashSet<GameObject> mFree;
     HashSet<GameObject> mInUse;
 
@@ -33,7 +35,7 @@ public class MonkeyMuckSpawner : MonoBehaviour
     {
         while (true)
         {
-            var playerNotClose = true;
+            var playerNotClose = Physics.OverlapSphere(transform.position, playerDetectionRadius, haltSpawnerOnIntersection).Length == 0;
             if (mFree.Count > 0 && playerNotClose)
             {
                 var nextMuck = popFree();
@@ -42,6 +44,13 @@ public class MonkeyMuckSpawner : MonoBehaviour
             }
             yield return new WaitForSeconds(SpawnDelay);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+     //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
+     Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
     }
 
     GameObject popFree()
