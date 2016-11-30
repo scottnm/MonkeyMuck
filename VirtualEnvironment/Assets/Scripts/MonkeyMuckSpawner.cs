@@ -49,8 +49,7 @@ public class MonkeyMuckSpawner : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-     //Use the same vars you use to draw your Overlap SPhere to draw your Wire Sphere.
-     Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
+        Gizmos.DrawWireSphere(transform.position, playerDetectionRadius);
     }
 
     GameObject popFree()
