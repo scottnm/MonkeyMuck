@@ -7,8 +7,12 @@ public class MonkeyMuckSpawner : MonoBehaviour
     [SerializeField] float SpawnDelay;
     [SerializeField] LayerMask haltSpawnerOnIntersection;
     [SerializeField] float playerDetectionRadius;
+    [SerializeField] GameObject[] Destinations;
+
     HashSet<GameObject> mFree;
     HashSet<GameObject> mInUse;
+
+    int nextDestinationIndex;
 
     public void Despawn(GameObject monkeyMuckToDespawn)
     {
@@ -17,6 +21,7 @@ public class MonkeyMuckSpawner : MonoBehaviour
         monkeyMuckToDespawn.transform.localPosition = Vector3.zero;
         mInUse.Remove(monkeyMuckToDespawn);
         mFree.Add(monkeyMuckToDespawn);
+        nextDestinationIndex = 0;
     }
 
     void Start()
@@ -39,6 +44,7 @@ public class MonkeyMuckSpawner : MonoBehaviour
             if (mFree.Count > 0 && playerNotClose)
             {
                 var nextMuck = popFree();
+                nextMuck.GetComponent<WalkToDestination>().Destination = Destinations[(nextDestinationIndex++) % Destinations.Length];
                 nextMuck.SetActive(true);
                 mInUse.Add(nextMuck);
             }

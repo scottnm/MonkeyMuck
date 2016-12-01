@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WalkToDestination : MonoBehaviour
 {
-    [SerializeField] GameObject Destination;
+    public GameObject Destination { get; set; }
     NavMeshAgent InternalNavMeshAgent;
     MonkeyMuckSpawner Spawner;
 
