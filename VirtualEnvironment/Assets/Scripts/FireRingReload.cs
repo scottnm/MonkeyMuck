@@ -32,6 +32,7 @@ public class FireRingReload : MonoBehaviour
             yield return new WaitForFixedUpdate();
             time += Time.deltaTime;
         }
+        GlobalState.Reset();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
