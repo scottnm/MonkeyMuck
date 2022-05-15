@@ -4,13 +4,13 @@ using System.Collections;
 public class WalkToDestination : MonoBehaviour
 {
     public GameObject Destination { get; set; }
-    NavMeshAgent InternalNavMeshAgent;
+    UnityEngine.AI.NavMeshAgent InternalNavMeshAgent;
     MonkeyMuckSpawner Spawner;
 
     // Use this for initialization
     void Start()
     {
-        InternalNavMeshAgent = GetComponent<NavMeshAgent>();
+        InternalNavMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Spawner = transform.parent.gameObject.GetComponent<MonkeyMuckSpawner>();
     }
 
