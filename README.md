@@ -10,6 +10,8 @@ The player-controlled character in the demo isn't the main star. That's the mons
 
 A demo can be played/downloaded from https://scottnm.itch.io/muck
 
+![cover image for muck demo](cover.png)
+
 ## Versions
 
 ### v0.2.0 - commit hash fc73f01906545fed22fd046ba3adaa52597229be
