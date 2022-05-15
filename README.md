@@ -14,7 +14,14 @@ A demo can be played/downloaded from https://scottnm.itch.io/muck
 
 ## Versions
 
-### v0.2.0 - commit hash fc73f01906545fed22fd046ba3adaa52597229be
+### v0.2.1 - commit hash 781c6da
+I managed to get the project building as a WebGL project so that I could upload it to the old itch.io page and it could be played in browser.
+
+Pretty cool stuff. Had to fix the compression settings but otherwise everything was super clean.
+
+You can now run the demo online at https://scottnm.itch.io/muck
+
+### v0.2.0 - commit hash fc73f01
 
 In 2022, I was doing some spring cleaning of old github repos and wanted to see if I could still run this.
 
@@ -24,7 +31,7 @@ It worked surprisingly well! You can build and run this yourself from the unity 
 
 I do not have a pre-built binary for this version.
 
-### v0.1.0 - commit hash df03b896e8fb2a57dd62f59fb4557418256083ec
+### v0.1.0 - commit hash df03b89
 
 This is the original version that I submitted for the class and which can be downloaded on my [itch.io page](https://scottnm.itch.io/muck).
 
